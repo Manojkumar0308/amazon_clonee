@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "499208284224",
+    "firebase_url": "https://clone-24eee-default-rtdb.firebaseio.com",
+    "project_id": "clone-24eee",
+    "storage_bucket": "clone-24eee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499208284224:android:63892c973a659b11b897a5",
+        "android_client_info": {
+          "package_name": "com.example.amazon_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYK_Ii9fi8qLofwoVjUL0ymzskSKJmsL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
