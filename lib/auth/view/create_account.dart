@@ -1,3 +1,4 @@
+import 'package:amazon_clone/auth/services/firebase_auth_service.dart';
 import 'package:amazon_clone/utils/loader.dart';
 import 'package:amazon_clone/widgets/custom_textfield.dart';
 import 'package:amazon_clone/widgets/custombutton.dart';
@@ -15,6 +16,7 @@ class CreateAccount extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<CreateAccount> {
+  FirebaseAuthService authService = FirebaseAuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -103,7 +105,6 @@ class _CreateAccountState extends State<CreateAccount> {
                               );
                               _emailController.clear();
                               _passwordController.clear();
-
                             },
                             color: AppColors.secondaryColor,
                           ),
@@ -118,14 +119,13 @@ class _CreateAccountState extends State<CreateAccount> {
                 height: 20,
               ),
               Consumer<AuthViewModel>(
-                builder: (context, provider, child) =>
-                     CustomButton(
-                        text: provider.isLoading?'Loading...':'Google-Sign-In',
-                        onTap: () async {
-                          await provider.signInWithGoogle(context);
-
-                        },
-                        color: Colors.white),
+                builder: (context, provider, child) => CustomButton(
+                    text: provider.isLoading ? 'Loading...' : 'Google-Sign-In',
+                    onTap: () async {
+                      await authService.googleSignIn(context);
+                      // await provider.signInWithGoogle(context);
+                    },
+                    color: Colors.white),
               ),
             ],
           ),
